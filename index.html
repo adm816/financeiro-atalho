@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Financeiro RM</title>
+<!-- Ícone e nome usados quando a página é adicionada à tela inicial do celular -->
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icone-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Financeiro RM">
+<meta name="theme-color" content="#2E1713">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; min-height: 100%; background: #2E1713; color: #F4F1EA; }
+  body { font: 500 14px/1.6 "Montserrat", "Helvetica Neue", Helvetica, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 32px 24px; box-sizing: border-box; }
+  main { max-width: 360px; text-align: center; }
+  img { width: 72px; display: block; margin: 0 auto 28px; }
+  h1 { font-size: 11px; font-weight: 600; letter-spacing: .34em; text-transform: uppercase; margin: 0 0 28px; }
+  a.botao { display: block; background: #F4F1EA; color: #2E1713; text-decoration: none; padding: 14px; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; border-radius: 2px; }
+  .dica { margin-top: 28px; padding-top: 20px; border-top: 1px solid #4A342E; color: #B7A79F; font-size: 12px; }
+  .dica b { color: #F4F1EA; font-weight: 600; }
+  .ouro { color: #B8932E; }
+</style>
+</head>
+<body>
+<!-- Esta página não tem dados: só leva ao painel, que exige login com a conta Google da RM -->
+<main>
+  <img src="icone-192.png" alt="RM">
+  <h1>Financeiro <span class="ouro">·</span> RM</h1>
+  <a class="botao" id="ir" href="https://script.google.com/macros/s/AKfycbyYVJMDkxE_aktMhJuAprSh0wcK3825JcDuAHnhZuBehGErP3CG81XAMTzQvCeHTfZBCQ/exec">Abrir o painel</a>
+  <p class="dica">Para ter o ícone no celular:<br>
+    <b>iPhone</b>: Compartilhar › Adicionar à Tela de Início<br>
+    <b>Android</b>: menu ⋮ › Instalar app</p>
+</main>
+<script>
+  /* Aberto pelo ícone da tela inicial: vai direto para o painel */
+  var instalado = window.navigator.standalone === true ||
+    window.matchMedia('(display-mode: standalone)').matches ||
+    /[?&]app=1/.test(location.search);
+  if (instalado) location.replace(document.getElementById('ir').href);
+</script>
+</body>
+</html>
